@@ -5,7 +5,7 @@ Rastrear um robô móvel através de um marcador vermelho, estimar sua posição
 
 ---
 
-### **primeira parte: Configuração e Matemática (Setup)**
+### **parte 1: Configuração e Matemática (Setup)** **ok**
 1.  **Definir a Matriz de Homografia ($H$):**
     * Copiar a matriz $H$ fornecida no PDF `modelo_camera.pdf`.
 2.  **Calcular a Matriz Inversa ($H^{-1}$):**
@@ -19,8 +19,8 @@ Rastrear um robô móvel através de um marcador vermelho, estimar sua posição
 
 ---
 
-### **Fase 2: O Pipeline de Processamento**
+### **parte 2: O Pipeline de Processamento**
 fazer processamento do video
 ---
-### **Fase 3: gerar os resultados**
+### **parte 3: gerar os resultados**
 fazer os graficos e etc

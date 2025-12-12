@@ -1,26 +1,31 @@
-### **Projeto RoboPose**
+# **Projeto RoboPose**
 
-#### **Objetivo**
-Rastrear um robô móvel através de um marcador vermelho, estimar sua posição real no chão (em milímetros) e sua orientação, e gerar gráficos da trajetória.
+## 📝 Rastreamento de Robô por Visão Computacional
 
----
+### 📌 Descrição do Projeto
 
-### **parte 1: Configuração e Matemática (Setup)** **ok**
-1.  **Definir a Matriz de Homografia ($H$):**
-    * Copiar a matriz $H$ fornecida no PDF `modelo_camera.pdf`.
-2.  **Calcular a Matriz Inversa ($H^{-1}$):**
-    * A matriz original mapeia do Mundo $\to$ Imagem.
-    * Nós queremos o inverso: **Imagem $(u,v) \to$ Mundo $(X,Y)$**. Portanto, usamos `np.linalg.inv(H)`.
-3.  **Criar Função de Transformação (`pixel_para_mundo`):**
-    * Entrada: Coordenadas do pixel $(u, v)$.
-    * Passo A: Converter para coordenadas homogêneas: vetor coluna $[u, v, 1]^T$.
-    * Passo B: Multiplicar pela matriz inversa: $P_{mundo} = H^{-1} \cdot P_{img}$.
-    * **Passo C (Correção Importante):** Realizar a **Normalização Homogênea**. O resultado será $[X', Y', W']$. As coordenadas reais são $X = X'/W'$ e $Y = Y'/W'$.
+Este projeto implementa um pipeline completo de rastreamento de um robô utilizando visão computacional, segmentação por cromaticidade no espaço RGB, detecção de contornos, extração de centróide, cálculo de orientação (theta) via matriz de inércia e autovalores, além de conversão das coordenadas de pixel para o mundo real (mm).
+
+Ao final, o sistema gera:
+
+- 🎥 Vídeo com a trajetória desenhada  
+- 📈 Gráficos da pose (X, Y, θ) ao longo do tempo  
+- ▶️ Visualização em tempo real dos frames processados  
 
 ---
 
-### **parte 2: O Pipeline de Processamento**
-fazer processamento do video
+### 🧩 Arquitetura do Pipeline
+
+![pipeline](result/pipeline.drawio.png)
+
+
 ---
-### **parte 3: gerar os resultados**
-fazer os graficos e etc
+
+### 🛠 Dependências
+
+- Python 3.8+
+- NumPy
+- OpenCV
+- Matplotlib
+- IPython.display
+
